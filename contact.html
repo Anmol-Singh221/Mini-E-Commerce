@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ShopX — Contact</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-inner">
+    <div class="nav-logo">ShopX</div>
+    <ul class="nav-menu">
+      <li><a class="nav-link" href="index.html">Home</a></li>
+      <li><a class="nav-link" href="shop.html">Shop</a></li>
+      <li><a class="nav-link active" href="contact.html">Contact</a></li>
+      <li><a class="nav-cart" href="shop.html">🛒<span class="cart-badge" id="cart-count">0</span></a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="contact-section">
+  <div class="shop-header">
+    <h2 class="shop-title">Contact Us</h2>
+    <p class="shop-subtitle">Have a question? We'd love to hear from you.</p>
+  </div>
+
+  <div class="contact-grid">
+    <div class="contact-info">
+      <h3>Get in Touch</h3>
+      <p>Reach out for order support, product questions, or just to say hello — our team replies within 24 hours.</p>
+
+      <div class="contact-detail">
+        <span class="ic">✉</span>
+        <span>support@shopx.com</span>
+      </div>
+      <div class="contact-detail">
+        <span class="ic">📍</span>
+        <span>123 Market Street, Delhi, India</span>
+      </div>
+      <div class="contact-detail">
+        <span class="ic">📞</span>
+        <span>+91 98765 43210</span>
+      </div>
+    </div>
+
+    <form class="contact-form" action="#" method="POST">
+      <div class="form-field">
+        <label for="name">Name</label>
+        <input class="contact-input" type="text" id="name" name="name" placeholder="Your full name" required>
+      </div>
+      <div class="form-field">
+        <label for="email">Email</label>
+        <input class="contact-input" type="email" id="email" name="email" placeholder="you@example.com" required>
+      </div>
+      <div class="form-field">
+        <label for="message">Message</label>
+        <textarea class="contact-textarea" id="message" name="message" placeholder="How can we help?" required></textarea>
+      </div>
+      <button type="submit" class="contact-btn">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>&copy; 2026 ShopX. Built with HTML, CSS &amp; JavaScript.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

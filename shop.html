@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ShopX — Shop</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-inner">
+    <div class="nav-logo">ShopX</div>
+    <ul class="nav-menu">
+      <li><a class="nav-link" href="index.html">Home</a></li>
+      <li><a class="nav-link active" href="shop.html">Shop</a></li>
+      <li><a class="nav-link" href="contact.html">Contact</a></li>
+      <li><a class="nav-cart" href="shop.html">🛒<span class="cart-badge" id="cart-count">0</span></a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="shop-section">
+  <div class="shop-header">
+    <h2 class="shop-title">Our Products</h2>
+    <p class="shop-subtitle">Handpicked items across every category you need</p>
+  </div>
+
+  <!-- Category tabs — clicking one filters the grid below.
+       No products are added or removed, just shown/hidden. -->
+  <div class="category-bar">
+    <button class="category-btn active" onclick="filterProducts('all', this)">All</button>
+    <button class="category-btn" onclick="filterProducts('electronics', this)">Electronics</button>
+    <button class="category-btn" onclick="filterProducts('fashion', this)">Fashion</button>
+    <button class="category-btn" onclick="filterProducts('beauty', this)">Beauty</button>
+  </div>
+
+  <div class="product-grid" id="productGrid">
+
+    <!-- 1: Watch -->
+    <div class="product-card" data-category="fashion">
+      <div class="product-img">
+        <span class="product-badge">New</span>
+        <img src="https://images.unsplash.com/photo-1631729670375-7b9bc6ba6c07?q=80&w=800&auto=format&fit=crop" alt="Classic Watch">
+      </div>
+      <div class="product-info">
+        <div class="product-category">Fashion</div>
+        <h3 class="product-name">Classic Watch</h3>
+        <div class="product-stars">★★★★★ <span>(214)</span></div>
+        <div class="price-row">
+          <span class="product-price">$120</span>
+        </div>
+        <button class="product-btn" onclick="addToCart(this)">Add to Cart</button>
+      </div>
+    </div>
+
+    <!-- 2: Headphones -->
+    <div class="product-card" data-category="electronics">
+      <div class="product-img">
+        <img src="https://images.unsplash.com/photo-1505751104546-4b63c93054b1?q=80&w=800&auto=format&fit=crop" alt="Wireless Headphones">
+      </div>
+      <div class="product-info">
+        <div class="product-category">Electronics</div>
+        <h3 class="product-name">Wireless Headphones</h3>
+        <div class="product-stars">★★★★☆ <span>(98)</span></div>
+        <div class="price-row">
+          <span class="product-price">$80</span>
+        </div>
+        <button class="product-btn" onclick="addToCart(this)">Add to Cart</button>
+      </div>
+    </div>
+
+    <!-- 3: Shoes -->
+    <div class="product-card" data-category="fashion">
+      <div class="product-img">
+        <span class="product-badge sale">-15%</span>
+        <img src="https://images.unsplash.com/photo-1675625500632-2d276bd51920?q=80&w=800&auto=format&fit=crop" alt="Running Shoes">
+      </div>
+      <div class="product-info">
+        <div class="product-category">Fashion</div>
+        <h3 class="product-name">Running Shoes</h3>
+        <div class="product-stars">★★★★★ <span>(340)</span></div>
+        <div class="price-row">
+          <span class="product-price">$80.75</span>
+          <span class="product-price-old">$95</span>
+        </div>
+        <button class="product-btn" onclick="addToCart(this)">Add to Cart</button>
+      </div>
+    </div>
+
+    <!-- 4: Travel Bag -->
+    <div class="product-card" data-category="fashion">
+      <div class="product-img">
+        <img src="https://images.unsplash.com/photo-1448582649076-3981753123b5?q=80&w=800&auto=format&fit=crop" alt="Travel Bag">
+      </div>
+      <div class="product-info">
+        <div class="product-category">Fashion</div>
+        <h3 class="product-name">Travel Bag</h3>
+        <div class="product-stars">★★★★☆ <span>(76)</span></div>
+        <div class="price-row">
+          <span class="product-price">$60</span>
+        </div>
+        <button class="product-btn" onclick="addToCart(this)">Add to Cart</button>
+      </div>
+    </div>
+
+    <!-- 5: Makeup Set -->
+    <div class="product-card" data-category="beauty">
+      <div class="product-img">
+        <span class="product-badge">New</span>
+        <img src="https://images.unsplash.com/photo-1654763837435-66a8bce43aff?q=80&w=800&auto=format&fit=crop" alt="Makeup Set">
+      </div>
+      <div class="product-info">
+        <div class="product-category">Beauty</div>
+        <h3 class="product-name">Makeup Set</h3>
+        <div class="product-stars">★★★★★ <span>(152)</span></div>
+        <div class="price-row">
+          <span class="product-price">$450</span>
+        </div>
+        <button class="product-btn" onclick="addToCart(this)">Add to Cart</button>
+      </div>
+    </div>
+
+    <!-- 6: Perfume -->
+    <div class="product-card" data-category="beauty">
+      <div class="product-img">
+        <img src="https://images.unsplash.com/photo-1609749282774-5883a366cdd1?q=80&w=800&auto=format&fit=crop" alt="Perfume">
+      </div>
+      <div class="product-info">
+        <div class="product-category">Beauty</div>
+        <h3 class="product-name">Perfume</h3>
+        <div class="product-stars">★★★★☆ <span>(64)</span></div>
+        <div class="price-row">
+          <span class="product-price">$70</span>
+        </div>
+        <button class="product-btn" onclick="addToCart(this)">Add to Cart</button>
+      </div>
+    </div>
+
+    <!-- 7: Laptop -->
+    <div class="product-card" data-category="electronics">
+      <div class="product-img">
+        <img src="https://images.unsplash.com/photo-1717765960938-58f2d7e2017f?q=80&w=800&auto=format&fit=crop" alt="Laptop">
+      </div>
+      <div class="product-info">
+        <div class="product-category">Electronics</div>
+        <h3 class="product-name">Laptop</h3>
+        <div class="product-stars">★★★★★ <span>(410)</span></div>
+        <div class="price-row">
+          <span class="product-price">$900</span>
+        </div>
+        <button class="product-btn" onclick="addToCart(this)">Add to Cart</button>
+      </div>
+    </div>
+
+    <!-- 8: Phone -->
+    <div class="product-card" data-category="electronics">
+      <div class="product-img">
+        <span class="product-badge sale">-10%</span>
+        <img src="https://images.unsplash.com/photo-1740721610016-ce8577141b78?q=80&w=800&auto=format&fit=crop" alt="Smartphone">
+      </div>
+      <div class="product-info">
+        <div class="product-category">Electronics</div>
+        <h3 class="product-name">Smartphone</h3>
+        <div class="product-stars">★★★★☆ <span>(288)</span></div>
+        <div class="price-row">
+          <span class="product-price">$540</span>
+          <span class="product-price-old">$600</span>
+        </div>
+        <button class="product-btn" onclick="addToCart(this)">Add to Cart</button>
+      </div>
+    </div>
+
+  </div>
+
+  <p class="no-results hidden" id="noResults">No products found in this category.</p>
+</section>
+
+<footer class="footer">
+  <p>&copy; 2026 ShopX. Built with HTML, CSS &amp; JavaScript.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
