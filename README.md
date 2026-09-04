@@ -20,7 +20,7 @@ A responsive mini e-commerce website developed using HTML, CSS and JavaScript.
 
 ## Live Demo
 
-Add your GitHub Pages link here.
+https://anmol-singh221.github.io/Mini-E-Commerce/
 
 ## Author
 
