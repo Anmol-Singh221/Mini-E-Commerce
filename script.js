@@ -53,3 +53,33 @@ function filterProducts(category, clickedButton) {
     noResults.classList.add("hidden");
   }
 }
+
+function addToCart(button) {
+    const card = button.closest(".product-card");
+
+    if (!card) return;
+
+    const name = card.querySelector(".product-name").textContent.trim();
+    const priceText = card.querySelector(".product-price").textContent;
+    const price = Number(priceText.replace(/[^0-9.]/g, ""));
+    const image = card.querySelector(".product-img img").src;
+
+    let cart = JSON.parse(localStorage.getItem("shopxCart") || "[]");
+
+    const existingProduct = cart.find(item => item.name === name);
+
+    if (existingProduct) {
+        existingProduct.quantity += 1;
+    } else {
+        cart.push({
+            name: name,
+            price: price,
+            image: image,
+            quantity: 1
+        });
+    }
+
+    localStorage.setItem("shopxCart", JSON.stringify(cart));
+
+    alert(name + " added to cart!");
+}
